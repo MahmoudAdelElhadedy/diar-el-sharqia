@@ -9,8 +9,16 @@
       *ngFor="let slide of slides; let i = index" 
       class="hero-slide" 
       [class.active]="i === currentSlideIndex()"
-      [style.background-image]="'url(' + slide.imageUrl + ')'"
     >
+      <!-- Real High-Res Background Image -->
+      <img 
+        [src]="slide.imageUrl" 
+        [alt]="slide.title" 
+        class="slide-bg-img"
+        [loading]="i === 0 ? 'eager' : 'lazy'"
+        [attr.fetchpriority]="i === 0 ? 'high' : null"
+      />
+
       <!-- Dark Luxury Overlay -->
       <div class="slide-overlay"></div>
 
@@ -162,7 +170,7 @@
       <div class="about-visual">
         <div class="visual-frame">
           <img 
-            src="/assets/images/hero/section2Home.jpg" 
+            src="assets/images/hero/section2Home.jpg" 
             alt="مشاريع شركة ديار الشرقية في المقاولات والتطوير العقاري والري" 
             class="main-img"
             width="1200"
@@ -221,7 +229,7 @@
       <div class="sector-card">
         <div class="sector-img-wrap">
           <img 
-            src="/assets/images/hero/tashteeb.jpg" 
+            src="assets/images/hero/tashteeb.jpg" 
             alt="أعمال التشطيبات الفندقية الفاخرة والمعمار الراقي - شركة ديار الشرقية" 
             width="1200"
             height="667"
@@ -254,7 +262,7 @@
       <div class="sector-card">
         <div class="sector-img-wrap">
           <img 
-            src="/assets/images/hero/AQAR.jpg" 
+            src="assets/images/hero/AQAR.jpg" 
             alt="مشروعات المقاولات العامة والأبراج الإنشائية والبنية التحتية - شركة ديار الشرقية" 
             width="1200"
             height="800"
@@ -287,7 +295,7 @@
       <div class="sector-card">
         <div class="sector-img-wrap">
           <img 
-            src="/assets/images/hero/agric1.jpg" 
+            src="assets/images/hero/agric1.jpg" 
             alt="مشروعات استصلاح الأراضي الزراعية وشبكات الري المحوري - شركة ديار الشرقية" 
             width="1200"
             height="960"

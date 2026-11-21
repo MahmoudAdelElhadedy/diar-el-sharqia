@@ -61,7 +61,15 @@ export class SeoService {
     this.setCanonicalUrl(canonicalUrl);
 
     // 4. Open Graph Tags (Facebook, LinkedIn, WhatsApp)
-    const ogImage = config.ogImage ? (config.ogImage.startsWith('http') ? config.ogImage : `${this.baseUrl}${config.ogImage}`) : this.defaultImage;
+    let ogImage = this.defaultImage;
+    if (config.ogImage) {
+      if (config.ogImage.startsWith('http')) {
+        ogImage = config.ogImage;
+      } else {
+        const path = config.ogImage.startsWith('/') ? config.ogImage : '/' + config.ogImage;
+        ogImage = `${this.baseUrl}${path}`;
+      }
+    }
     
     this.metaService.updateTag({ property: 'og:title', content: config.title });
     this.metaService.updateTag({ property: 'og:description', content: config.description });

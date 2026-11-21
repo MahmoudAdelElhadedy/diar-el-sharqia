@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       primaryBtnLink: '/projects',
       secondaryBtnText: 'طلب مقايسة واستشارة',
       secondaryBtnLink: '/contact',
-      imageUrl: '/assets/images/hero/slide-real-estate.jpg'
+      imageUrl: 'assets/images/hero/slide-real-estate.jpg'
     },
     {
       badge: 'المقاولات العامة والبنية التحتية',
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       primaryBtnLink: '/projects',
       secondaryBtnText: 'طلب استشارة هندسية',
       secondaryBtnLink: '/contact',
-      imageUrl: '/assets/images/hero/Construction.jpg'
+      imageUrl: 'assets/images/hero/Construction.jpg'
     },
     {
       badge: 'استصلاح الأراضي الزراعية',
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       primaryBtnLink: '/projects',
       secondaryBtnText: 'فرص الاستثمار الزراعي',
       secondaryBtnLink: '/contact',
-      imageUrl: '/assets/images/hero/fields.jpg'
+      imageUrl: 'assets/images/hero/fields.jpg'
     }
   ];
 
