@@ -37,9 +37,7 @@ jobs:
 
       - name: Build Angular Project for GitHub Pages
         run: |
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          echo "Building for GitHub Pages repository: $REPO_NAME"
-          npx ng build --configuration production --base-href "/$REPO_NAME/"
+          npx ng build --configuration production --base-href "/diar-el-sharqia/"
 
       - name: Ensure 404.html is present in build output
         run: |
