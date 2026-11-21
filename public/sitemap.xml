@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://diarelsharqia.com/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/slide-real-estate.jpg</image:loc>
+      <image:title>تشطيبات معمارية راقية - شركة ديار الشرقية</image:title>
+      <image:caption>أعمال التشطيبات الفاخرة والمعمار الراقي لشركة ديار الشرقية</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/Construction.jpg</image:loc>
+      <image:title>المقاولات العامة والبنية التحتية - شركة ديار الشرقية</image:title>
+      <image:caption>مشروعات المقاولات العامة والأبراج الإنشائية</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/fields.jpg</image:loc>
+      <image:title>استصلاح الأراضي الزراعية - شركة ديار الشرقية</image:title>
+      <image:caption>مشروعات استصلاح وتنمية الأراضي الزراعية الحديثة</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://diarelsharqia.com/about</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/section2Home.jpg</image:loc>
+      <image:title>عن شركة ديار الشرقية وتاريخها</image:title>
+      <image:caption>نبذة عن تاريخ شركة ديار الشرقية ورؤيتها ورسالتها الهندسية</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://diarelsharqia.com/projects</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/AQAR.jpg</image:loc>
+      <image:title>معرض مشاريع ديار الشرقية</image:title>
+      <image:caption>أحدث مشاريع التطوير العقاري والمقاولات العامة</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/tashteeb.jpg</image:loc>
+      <image:title>مشاريع التشطيبات الفندقية</image:title>
+      <image:caption>نماذج من أرقى أعمال التشطيبات والديكورات الفاخرة</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://diarelsharqia.com/assets/images/hero/agric1.jpg</image:loc>
+      <image:title>مشاريع استصلاح الأراضي</image:title>
+      <image:caption>مشروعات الزراعة والري المحوري بالشرقية ومصر</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://diarelsharqia.com/contact</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

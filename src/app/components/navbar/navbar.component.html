@@ -1,0 +1,125 @@
+<header class="luxury-navbar" [class.scrolled]="isScrolled() || !isHomePage()" [class.menu-open]="mobileMenuOpen()">
+  <div class="container nav-container">
+    
+    <!-- Brand Logo -->
+    <a routerLink="/" class="brand-logo" (click)="closeMobileMenu()">
+      <div class="logo-emblem">
+        <span class="emblem-inner">
+          <i class="fa-solid fa-gem emblem-icon"></i>
+        </span>
+      </div>
+      <div class="logo-text">
+        <span class="company-name">ديار الشرقية</span>
+        <span class="company-sub">للتطوير العقاري والمقاولات واستصلاح الأراضي</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-nav">
+      <ul class="nav-list">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+            <span>الرئيسية</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active" class="nav-link">
+            <span>عن الشركة</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/projects" routerLinkActive="active" class="nav-link">
+            <span>مشاريعنا وأعمالنا</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link">
+            <span>تواصل معنا</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Desktop Action Button -->
+    <div class="nav-action">
+      <a routerLink="/contact" class="btn btn-gold btn-sm">
+        <i class="fa-solid fa-phone-volume"></i>
+        <span>طلب استشارة</span>
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="القائمة الرئيسية">
+      <span class="bar" [class.active]="mobileMenuOpen()"></span>
+      <span class="bar" [class.active]="mobileMenuOpen()"></span>
+      <span class="bar" [class.active]="mobileMenuOpen()"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" [class.open]="mobileMenuOpen()">
+    <div class="mobile-nav-inner">
+      <ul class="mobile-nav-list">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()" class="mobile-link">
+            <i class="fa-solid fa-house"></i>
+            <span>الرئيسية</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()" class="mobile-link">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>عن الشركة</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/projects" routerLinkActive="active" (click)="closeMobileMenu()" class="mobile-link">
+            <i class="fa-solid fa-city"></i>
+            <span>مشاريعنا وأعمالنا</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()" class="mobile-link">
+            <i class="fa-solid fa-envelope"></i>
+            <span>تواصل معنا</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="mobile-footer-action">
+        <a routerLink="/contact" (click)="closeMobileMenu()" class="btn btn-gold w-100">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>احجز استشارتك الهندسية</span>
+        </a>
+        <div class="mobile-contact-quick">
+          <a href="tel:+201001234567"><i class="fa-solid fa-phone"></i> 01001234567</a>
+          <a href="mailto:info@diarelsharqia.com"><i class="fa-solid fa-envelope"></i> info&#64;diarelsharqia.com</a>
+        </div>
+        <div class="unified-social-links mt-3" style="display: flex; justify-content: center; gap: 8px;">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" title="Facebook" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" title="Instagram" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tiktok" title="TikTok" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-snapchat" title="Snapchat" aria-label="Snapchat">
+            <i class="fa-brands fa-snapchat"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-youtube" title="YouTube" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="mailto:info@diarelsharqia.com" class="social-icon-btn social-email" title="البريد الإلكتروني الرسمي" aria-label="Official Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Backdrop -->
+  <div class="mobile-backdrop" *ngIf="mobileMenuOpen()" (click)="closeMobileMenu()"></div>
+</header>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host
+Host: https://diarelsharqia.com
+
+# Sitemaps
+Sitemap: https://diarelsharqia.com/sitemap.xml

@@ -1,0 +1,433 @@
+<!-- ==========================================
+     HERO SLIDER SECTION (100vh)
+     ========================================== -->
+<section class="hero-slider-section" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
+  
+  <!-- Slides Container -->
+  <div class="slides-wrapper">
+    <div 
+      *ngFor="let slide of slides; let i = index" 
+      class="hero-slide" 
+      [class.active]="i === currentSlideIndex()"
+      [style.background-image]="'url(' + slide.imageUrl + ')'"
+    >
+      <!-- Dark Luxury Overlay -->
+      <div class="slide-overlay"></div>
+
+      <!-- Slide Content Container -->
+      <div class="container slide-content-container">
+        <div class="slide-content">
+          
+          <div class="slide-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">{{ slide.badge }}</span>
+          </div>
+
+          <h1 *ngIf="i === 0" class="slide-title">
+            {{ slide.title }}
+          </h1>
+          <h2 *ngIf="i > 0" class="slide-title">
+            {{ slide.title }}
+          </h2>
+
+          <p class="slide-subtitle">
+            {{ slide.subtitle }}
+          </p>
+
+          <div class="slide-actions">
+            <a [routerLink]="slide.primaryBtnLink" class="btn btn-gold btn-hero">
+              <span>{{ slide.primaryBtnText }}</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <a [routerLink]="slide.secondaryBtnLink" class="btn btn-outline-white btn-hero">
+              <i class="fa-solid fa-phone"></i>
+              <span>{{ slide.secondaryBtnText }}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Controls (Prev / Next Arrows) -->
+  <button class="slider-arrow prev-arrow" (click)="prevSlide()" aria-label="الشريحة السابقة">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <button class="slider-arrow next-arrow" (click)="nextSlide()" aria-label="الشريحة التالية">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <!-- Slider Bottom Bar & Dots -->
+  <div class="slider-bottom-bar">
+    <div class="container bottom-bar-inner">
+      
+      <!-- Slide Counter -->
+      <div class="slide-counter">
+        <span class="current-number">0{{ currentSlideIndex() + 1 }}</span>
+        <span class="counter-sep">/</span>
+        <span class="total-number">0{{ slides.length }}</span>
+      </div>
+
+      <!-- Indicators -->
+      <div class="slider-dots">
+        <button 
+          *ngFor="let slide of slides; let i = index" 
+          class="dot-indicator" 
+          [class.active]="i === currentSlideIndex()"
+          (click)="goToSlide(i)"
+          [attr.aria-label]="'انتقل إلى الشريحة ' + (i + 1)"
+        >
+          <span class="dot-bar"></span>
+          <span class="dot-label">{{ slide.badge }}</span>
+        </button>
+      </div>
+
+      <!-- Quick Scroll Down Hint -->
+      <a href="#about-section" class="scroll-down-hint">
+        <span>اكتشف المزيد</span>
+        <i class="fa-solid fa-angles-down"></i>
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SECTION 2: عن شركتنا (ABOUT US)
+     ========================================== -->
+<section id="about-section" class="about-overview-section bg-white">
+  <div class="container">
+    <div class="about-grid">
+      
+      <!-- Right: Narrative & Content -->
+      <div class="about-narrative">
+        <div class="section-tag-inline">
+          <i class="fa-solid fa-shield-halved text-gold"></i>
+          <span>ريادة متكاملة في عالم التشطيبات</span>
+        </div>
+
+        <h2 class="section-headline">
+          عن شركتنا
+        </h2>
+        <div class="headline-gold-line"></div>
+
+        <h3 class="about-lead">
+          شركة ديار الشرقية.. صرح وطني يجمع بين الإبداع المعماري الحديث والنهضة الزراعية الخضراء
+        </h3>
+
+        <p class="about-paragraph">
+          تأسست <strong>شركة ديار الشرقية للتطوير العقاري والمقاولات العامة واستصلاح الأراضي</strong> ككيان استثماري وهندسي متكامل، يهدف إلى إحداث نقلة نوعية في التنمية العمرانية والزراعية في جمهورية مصر العربية والمنطقة. نؤمن بأن بناء المستقبل يبدأ من الأساسات الخرسانية الراسخة ويمتد إلى المساحات الخضراء المستصلحة التي تمد الأجيال بالخير والازدهار.
+        </p>
+
+        <p class="about-paragraph">
+          تمتلك الشركة سجلاً حافلاً بالإنجازات يضم مجمعات سكنية فاخرة، مشروعات بنية تحتية ثقيلة وطرق وكباري، إلى جانب استصلاح وتجهيز أكثر من 50 ألف فدان بأحدث نظم الري الرقمية والطاقة المتجددة، تحت إشراف نخبة من كبار المهندسين والاستشاريين والخبراء الزراعيين.
+        </p>
+
+        <!-- Feature Pillars List -->
+        <div class="about-pillars">
+          <div class="pillar-item">
+            <div class="pillar-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="pillar-info">
+              <h4>أعلى معايير الجودة العالمية</h4>
+              <p>تطبيق معايير ISO واختبارات معملية دقيقة لكافة المواد الخرسانية وأنظمة الري.</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="pillar-info">
+              <h4>استدامة بيئية وزراعية</h4>
+              <p>استخدام الطاقة الشمسية وتقنيات الري الذكية لترشيد المياه وتعظيم المحصول.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Read More Button -->
+        <div class="about-cta-wrapper">
+          <a routerLink="/about" class="btn btn-gold">
+            <span>اقرأ المزيد عن تاريخنا ورؤيتنا</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <a routerLink="/contact" class="btn btn-outline-gold">
+            <span>تواصل مع الإدارة</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Left: Visual Image & Floating Badges -->
+      <div class="about-visual">
+        <div class="visual-frame">
+          <img 
+            src="/assets/images/hero/section2Home.jpg" 
+            alt="مشاريع شركة ديار الشرقية في المقاولات والتطوير العقاري والري" 
+            class="main-img"
+            width="1200"
+            height="1500"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="frame-border-accent"></div>
+          
+          <!-- Floating Badge 1 -->
+          <div class="floating-badge badge-quality">
+            <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="badge-text">
+              <span class="lbl">ريادة وإتقان معماري متكامل</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 -->
+          <div class="floating-badge badge-acreage">
+            <div class="badge-icon"><i class="fa-solid fa-tractor"></i></div>
+            <div class="badge-text">
+              <span class="num"></span>
+              <span class="lbl"> مشاريع كثيرة منفذه علي ارض الواقع  </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION 3: مجالاتنا الرئيسية (CORE SECTORS)
+     ========================================== -->
+<section class="sectors-section bg-warm-beige">
+  <div class="container">
+    
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>قطاعات العمل الاستراتيجية</span>
+      </div>
+      <h2 class="section-title">
+        مجالات تميزنا الرئيسية
+      </h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">
+        نقدم منظومة متكاملة تغطي كافة مراحل البناء والتطوير، من التخطيط المعماري الراقي إلى هندسة البنية التحتية والنهضة الزراعية الشاملة.
+      </p>
+    </div>
+
+    <div class="sectors-grid">
+      
+      <!-- Sector 1: Real Estate -->
+      <div class="sector-card">
+        <div class="sector-img-wrap">
+          <img 
+            src="/assets/images/hero/tashteeb.jpg" 
+            alt="أعمال التشطيبات الفندقية الفاخرة والمعمار الراقي - شركة ديار الشرقية" 
+            width="1200"
+            height="667"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="sector-icon-badge">
+            <i class="fa-solid fa-hotel"></i>
+          </div>
+        </div>
+        <div class="sector-body">
+          <span class="sector-category">التشطيبات المعمارية</span>
+          <h3 class="sector-title">تشطيبات فندقية فاخرة</h3>
+          <p class="sector-text">
+            عمل تشطيبات فاخرة لجميع انواع الوحدات الفيلات السكنية، الأبراج الإدارية، والمجمعات التجارية وفق أعلى الطرز المعمارية الحديثة مع مراعاة أدق تفاصيل الراحة والرفاهية.
+          </p>
+          <ul class="sector-points">
+            <li><i class="fa-solid fa-check text-gold"></i> صيانة الكومبوندات والمجتمعات السكنية </li>
+            <li><i class="fa-solid fa-check text-gold"></i> مراكز أعمال وأبراج تجارية ذكية</li>
+            <li><i class="fa-solid fa-check text-gold"></i> تشطيبات فندقية وأنظمة منازل ذكية</li>
+          </ul>
+          <a routerLink="/projects" [queryParams]="{category: 'real-estate'}" class="sector-link">
+            <span>استعراض مشاريع التشطيبات المعمارية</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sector 2: Contracting -->
+      <div class="sector-card">
+        <div class="sector-img-wrap">
+          <img 
+            src="/assets/images/hero/AQAR.jpg" 
+            alt="مشروعات المقاولات العامة والأبراج الإنشائية والبنية التحتية - شركة ديار الشرقية" 
+            width="1200"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="sector-icon-badge">
+            <i class="fa-solid fa-helmet-safety"></i>
+          </div>
+        </div>
+        <div class="sector-body">
+          <span class="sector-category">المقاولات والإنشاءات</span>
+          <h3 class="sector-title">المقاولات العامة والبنية التحتية</h3>
+          <p class="sector-text">
+            تنفيذ مشاريع المقاولات الكبرى، ابراج ادارية وسكنية، فلل وشقق سكنية، والمجمعات الصناعية مع الالتزام التام بالجدول الزمني المعتمد والجودة القياسية.
+          </p>
+          <ul class="sector-points">
+            <li><i class="fa-solid fa-check text-gold"></i> ابراج ادارية وسكنية</li>
+            <li><i class="fa-solid fa-check text-gold"></i>  مشاريع المقاولات الكبرى</li>
+            <li><i class="fa-solid fa-check text-gold"></i> فلل، شقق سكنية، المجمعات الصناعية</li>
+          </ul>
+          <a routerLink="/projects" [queryParams]="{category: 'contracting'}" class="sector-link">
+            <span>استعراض أعمال المقاولات</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sector 3: Agriculture -->
+      <div class="sector-card">
+        <div class="sector-img-wrap">
+          <img 
+            src="/assets/images/hero/agric1.jpg" 
+            alt="مشروعات استصلاح الأراضي الزراعية وشبكات الري المحوري - شركة ديار الشرقية" 
+            width="1200"
+            height="960"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="sector-icon-badge">
+            <i class="fa-solid fa-wheat-awn"></i>
+          </div>
+        </div>
+        <div class="sector-body">
+          <span class="sector-category">التنمية الزراعية</span>
+          <h3 class="sector-title">استصلاح وتنمية الأراضي الزراعية</h3>
+          <p class="sector-text">
+            تحويل الأراضي الصحراوية الشاسعة إلى مزارع منتجة ومثمرة، عبر شبكات الري المحوري (Pivot) وحفر الآبار الجوفية، ومحطات الطاقة الشمسية الصديقة للبيئة.
+          </p>
+          <ul class="sector-points">
+            <li><i class="fa-solid fa-check text-gold"></i> استصلاح وتمهيد التربة بأحدث المعدات</li>
+            <li><i class="fa-solid fa-check text-gold"></i> محطات ري رقمية وتوليد طاقة شمسية</li>
+            <li><i class="fa-solid fa-check text-gold"></i> زراعة المحاصيل التصديرية والاستراتيجية</li>
+          </ul>
+          <a routerLink="/projects" [queryParams]="{category: 'agriculture'}" class="sector-link">
+            <span>استعراض مشاريع الاستصلاح</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION 4: مشاريع مميزة (FEATURED PROJECTS)
+     ========================================== -->
+<section class="featured-projects-section bg-white">
+  <div class="container">
+    
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-star"></i>
+        <span>معرض الإنجازات</span>
+      </div>
+      <h2 class="section-title">
+        مقتطفات من أحدث مشاريعنا
+      </h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">
+        نفخر بتنفيذ حزمة من أبرز المشاريع القومية والخاصة التي تعكس بصمتنا المتفردة في الجودة والدقة والالتزام.
+      </p>
+    </div>
+
+    <div class="featured-grid">
+      <div *ngFor="let project of featuredProjects" class="project-preview-card">
+        <div class="card-image-wrap">
+          <img 
+            [src]="project.imageUrl" 
+            [alt]="project.title + ' - شركة ديار الشرقية'" 
+            width="600"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+          
+          <span class="status-pill">{{ project.status }}</span>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+           
+          </div>
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-summary">{{ project.summary }}</p>
+          <a routerLink="/projects" class="card-cta">
+            <span>عرض تفاصيل المشروع</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-all-projects-cta">
+      <a routerLink="/projects" class="btn btn-gold btn-lg">
+        <i class="fa-solid fa-grid-2"></i>
+        <span>مشاهدة جميع المشاريع والأعمال (تصفية شاملة)</span>
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ==========================================
+     SECTION 6: دعوة لاتخاذ إجراء (CTA BANNER)
+     ========================================== -->
+<section class="cta-banner-section bg-warm-beige">
+  <div class="container">
+    <div class="cta-banner-card">
+      <div class="cta-content">
+        <span class="cta-badge"><i class="fa-solid fa-phone-volume"></i> تواصل معنا اليوم</span>
+        <h2 class="cta-title">هل تبحث عن شريك موثوق لمشروعك العقاري أو الزراعي القادم؟</h2>
+        <p class="cta-subtitle">
+          فريقنا الهندسي والاستشاري جاهز لتقديم دراسات جدوى شاملة وحلول تنفيذية متقدمة تضمن لك أعلى عائد استثماري وأعلى دقة في التنفيذ.
+        </p>
+        <div class="cta-actions">
+          <a routerLink="/contact" class="btn btn-gold btn-lg">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>طلب استشارة وعرض أسعار</span>
+          </a>
+          <a href="tel:+201001234567" class="btn btn-dark btn-lg">
+            <i class="fa-solid fa-phone"></i>
+            <span dir="ltr">0100 123 4567</span>
+          </a>
+        </div>
+
+        <div class="cta-social-wrap">
+          <div class="unified-social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" title="Facebook" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" title="Instagram" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tiktok" title="TikTok" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-snapchat" title="Snapchat" aria-label="Snapchat">
+              <i class="fa-brands fa-snapchat"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-youtube" title="YouTube" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="mailto:info@diarelsharqia.com" class="social-icon-btn social-email" title="البريد الإلكتروني الرسمي" aria-label="Official Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

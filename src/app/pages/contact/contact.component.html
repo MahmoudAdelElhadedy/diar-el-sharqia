@@ -1,0 +1,191 @@
+<!-- Page Hero Header -->
+<section class="page-hero-header">
+  <div class="hero-overlay"></div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <div class="breadcrumb-nav">
+        <a routerLink="/">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>تواصل معنا</span>
+      </div>
+      <h1 class="page-title">تواصل مع ديار الشرقية</h1>
+      <p class="page-subtitle">
+        يسعدنا دائماً استقبال استفساراتكم ومناقشة مشروعاتكم مع نخبة من كبار المستشارين والمهندسين المتخصصين
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form & Info Section -->
+<section class="contact-main-section bg-warm-beige">
+  <div class="container">
+    <div class="contact-grid">
+      
+      <!-- Right: Interactive Form (Name, Phone, Message only) -->
+      <div class="contact-form-card">
+        <div class="form-header">
+          <span class="form-tag"><i class="fa-solid fa-paper-plane text-gold"></i> نموذج المراسلة</span>
+          <h2 class="form-title">أرسل استفسارك أو طلبك الهندسي</h2>
+          <p class="form-desc">املأ النموذج التالي وسيقوم المستشار المختص بالتواصل معك في غضون 24 ساعة.</p>
+        </div>
+
+        <!-- Success Message Alert -->
+        <div class="success-alert-box" *ngIf="isSubmittedSuccess()">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="success-text">
+            <h3>تم إرسال رسالتك بنجاح!</h3>
+            <p>شكراً لاهتمامك وتواصلك مع شركة ديار الشرقية. تم تسجيل طلبك وسيقوم أحد ممثلينا بالتواصل معك قريباً.</p>
+            <button class="btn btn-gold btn-sm" (click)="resetForm()">
+              <i class="fa-solid fa-rotate-right"></i>
+              <span>إرسال استفسار آخر</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Form Elements: Name, Phone, Message only -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!isSubmittedSuccess()" novalidate>
+          
+          <!-- Full Name -->
+          <div class="form-group" [class.has-error]="contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched">
+            <label for="fullName">
+              الاسم <span class="required-star">*</span>
+            </label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user input-icon"></i>
+              <input 
+                id="fullName" 
+                type="text" 
+                formControlName="fullName" 
+                placeholder="أدخل اسمك الكريم..." 
+              />
+            </div>
+            <div class="error-msg" *ngIf="contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched">
+              <span *ngIf="contactForm.get('fullName')?.errors?.['required']">يرجى إدخال الاسم.</span>
+              <span *ngIf="contactForm.get('fullName')?.errors?.['minlength']">يجب أن يحتوي الاسم على 3 أحرف على الأقل.</span>
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group" [class.has-error]="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+            <label for="phone">
+              رقم الهاتف <span class="required-star">*</span>
+            </label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-phone input-icon"></i>
+              <input 
+                id="phone" 
+                type="tel" 
+                formControlName="phone" 
+                placeholder="010xxxxxxxx أو +20..." 
+                dir="ltr"
+              />
+            </div>
+            <div class="error-msg" *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+              <span *ngIf="contactForm.get('phone')?.errors?.['required']">يرجى إدخال رقم الهاتف للتواصل.</span>
+              <span *ngIf="contactForm.get('phone')?.errors?.['pattern']">يرجى إدخال رقم هاتف صحيح (10 إلى 15 رقماً).</span>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group" [class.has-error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            <label for="message">
+              الرسالة <span class="required-star">*</span>
+            </label>
+            <div class="input-wrap textarea-wrap">
+              <i class="fa-solid fa-message input-icon"></i>
+              <textarea 
+                id="message" 
+                rows="5" 
+                formControlName="message" 
+                placeholder="اكتب هنا تفاصيل رسالتك أو استفسارك، وسيقوم فريقنا بالتواصل معك..."
+              ></textarea>
+            </div>
+            <div class="error-msg" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+              <span *ngIf="contactForm.get('message')?.errors?.['required']">يرجى كتابة نص الرسالة.</span>
+              <span *ngIf="contactForm.get('message')?.errors?.['minlength']">يرجى كتابة 10 أحرف على الأقل لشرح رسالتك.</span>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-gold btn-submit" [disabled]="isSubmitting()">
+            <span *ngIf="!isSubmitting()"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة الآن</span>
+            <span *ngIf="isSubmitting()"><i class="fa-solid fa-spinner fa-spin"></i> جاري الإرسال والتأكيد...</span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Left: Contact Details Cards & Unified Social Channels -->
+      <div class="contact-sidebar">
+        
+        <!-- Official Email Card -->
+        <div class="contact-info-card">
+          <div class="info-card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <div class="info-card-text">
+            <h4>البريد الإلكتروني الرسمي</h4>
+            <p><a href="mailto:info@diarelsharqia.com" class="contact-link">info&#64;diarelsharqia.com</a></p>
+            <span class="sub-loc">نستقبل كافة المراسلات والاستفسارات على مدار الساعة</span>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-info-card">
+          <div class="info-card-icon"><i class="fa-solid fa-headset"></i></div>
+          <div class="info-card-text">
+            <h4>أرقام التواصل والخط الساخن</h4>
+            <p dir="ltr"><a href="tel:+201001234567" class="contact-link">+20 100 123 4567</a></p>
+            <p dir="ltr"><a href="tel:+20552345678" class="contact-link">+20 55 234 5678</a></p>
+            <span class="sub-loc">فريق الدعم الفني والاستشاري متاح لخدمتكم</span>
+          </div>
+        </div>
+
+        <!-- Working Hours Card -->
+        <div class="contact-info-card">
+          <div class="info-card-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="info-card-text">
+            <h4>مواعيد العمل الرسمية</h4>
+            <p>السبت إلى الخميس: من 9:00 صباحاً حتى 6:00 مساءً</p>
+            <span class="sub-loc">الجمعة: عطلة أسبوعية</span>
+          </div>
+        </div>
+
+        <!-- Unified Official Social Media Channels -->
+        <div class="contact-info-card social-channels-card">
+          <div class="info-card-icon"><i class="fa-solid fa-share-nodes"></i></div>
+          <div class="info-card-text">
+            <h4>صفحاتنا على منصات التواصل</h4>
+            <p class="social-desc">تابع أحدث مشروعاتنا وعروضنا الحصرية عبر قنواتنا الرسمية:</p>
+            <div class="unified-social-links on-light">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-btn social-facebook" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon-btn social-instagram" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-icon-btn social-tiktok" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" class="social-icon-btn social-snapchat" title="Snapchat">
+                <i class="fa-brands fa-snapchat"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon-btn social-youtube" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="mailto:info@diarelsharqia.com" aria-label="البريد الإلكتروني الرسمي" class="social-icon-btn social-email" title="info@diarelsharqia.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Direct WhatsApp Button -->
+        <a href="https://wa.me/201001234567" target="_blank" class="btn btn-whatsapp-direct">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>محادثة فورية عبر واتساب</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>

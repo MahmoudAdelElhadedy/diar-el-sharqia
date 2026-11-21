@@ -1,0 +1,219 @@
+<!-- Page Hero Header -->
+<section class="page-hero-header">
+  <div class="hero-overlay"></div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <div class="breadcrumb-nav">
+        <a routerLink="/">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>مشاريعنا وأعمالنا</span>
+      </div>
+      <h1 class="page-title">مشاريعنا وأعمالنا الهندسية</h1>
+      <p class="page-subtitle">
+        سجل متألق من مشروعات التشطيبات الفندقية والأبراج السكنية، أعمال المقاولات العامة والبنية التحتية، والمساحات الزراعية المستصلحة
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Filter Tabs Section -->
+<section class="projects-main-section bg-warm-beige">
+  <div class="container">
+    
+    <!-- Filter Tabs Container -->
+    <div class="filter-tabs-wrapper">
+      <div class="filter-buttons">
+        <button 
+          *ngFor="let cat of categories"
+          class="filter-btn"
+          [class.active]="selectedCategory() === cat.id"
+          (click)="setCategory(cat.id)"
+        >
+          <i [class]="cat.icon"></i>
+          <span>{{ cat.label }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Projects Grid Count Info -->
+    <div class="projects-meta-bar">
+      <span class="count-badge">
+        عرض <strong>{{ filteredProjects.length }}</strong> مشروع
+      </span>
+      <span class="active-cat-hint">
+        التصنيف: 
+        <strong *ngIf="selectedCategory() === 'all'">كافة المجالات والقطاعات</strong>
+        <strong *ngIf="selectedCategory() === 'real-estate'">قطاع التشطيبات الفندقية والأبراج السكنية</strong>
+        <strong *ngIf="selectedCategory() === 'contracting'">قطاع المقاولات العامة والبنية التحتية</strong>
+        <strong *ngIf="selectedCategory() === 'agriculture'">قطاع استصلاح الأراضي الزراعية</strong>
+      </span>
+    </div>
+
+    <!-- Minimal Cards Grid (صورة وعنوان بسيط فقط) -->
+    <div class="projects-grid">
+      <div 
+        *ngFor="let project of filteredProjects" 
+        class="project-simple-card"
+        (click)="openProjectDetails(project)"
+      >
+        <div class="card-media">
+          <img 
+            [src]="project.imageUrl" 
+            [alt]="project.title + ' - شركة ديار الشرقية'" 
+            width="600" 
+            height="400" 
+            loading="lazy" 
+            decoding="async" 
+          />
+          <div class="card-overlay-hover">
+            <span class="view-gallery-pill">
+              <i class="fa-solid fa-images"></i>
+              <span>استعراض ألبوم الصور</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="card-caption">
+          <h3 class="project-simple-title">{{ project.title }}</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================
+     INTERACTIVE ASYMMETRICAL MOSAIC MODAL
+     (مجموعة من الصور مرتبة بصورة عشوائية جميلة)
+     ========================================== -->
+<div class="project-modal-backdrop" *ngIf="selectedProject()" (click)="closeProjectModal()">
+  <div class="project-modal-container" (click)="$event.stopPropagation()">
+    
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <span class="modal-category-badge">{{ selectedProject()?.categoryLabel }}</span>
+        <h2 class="modal-project-title">{{ selectedProject()?.title }}</h2>
+      </div>
+      <button class="modal-close-btn" (click)="closeProjectModal()" aria-label="إغلاق النافذة">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body" *ngIf="selectedProject() as p">
+      
+      <!-- Gallery Top Bar -->
+      <div class="gallery-header-bar">
+        <div class="gallery-badge-info">
+          <i class="fa-solid fa-camera-retro"></i>
+          <span>معرض الأعمال والصور المعمارية ({{ getProjectImages(p).length }} صور)</span>
+        </div>
+        <span class="gallery-hint">
+          <i class="fa-solid fa-hand-pointer"></i>
+          انقر على أي صورة لتكبيرها واستعراضها بجودة فائقة
+        </span>
+      </div>
+
+      <!-- Asymmetrical / Random Collage Mosaic Grid -->
+      <div class="mosaic-gallery">
+        <div 
+          *ngFor="let img of getProjectImages(p); let i = index" 
+          class="mosaic-item"
+          [ngClass]="'mosaic-span-' + ((i % 7) + 1)"
+          (click)="openLightbox(i)"
+        >
+          <img 
+            [src]="img" 
+            [alt]="p.title + ' - صورة هندسية من المشروع'" 
+            width="800" 
+            height="600" 
+            loading="lazy" 
+            decoding="async" 
+          />
+          <div class="mosaic-overlay">
+            <span class="mosaic-zoom-btn">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Project Highlights -->
+      <div class="modal-highlights-bar">
+        <div class="highlight-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>{{ p.location }}</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-ruler-combined"></i>
+          <span>{{ p.area }}</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-calendar"></i>
+          <span>{{ p.year }}</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-circle-check text-gold"></i>
+          <span>{{ p.status }}</span>
+        </div>
+      </div>
+
+      <!-- Project Brief -->
+      <div class="modal-brief-box">
+        <p>{{ p.description }}</p>
+      </div>
+
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="modal-footer">
+      <a routerLink="/contact" (click)="closeProjectModal()" class="btn btn-gold">
+        <i class="fa-solid fa-envelope"></i>
+       </a>
+      <button class="btn btn-dark" (click)="closeProjectModal()">
+        <span>إغلاق المعرض</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==========================================
+     FULLSCREEN LIGHTBOX VIEWER
+     ========================================== -->
+<div class="lightbox-backdrop" *ngIf="activeLightboxIndex() >= 0" (click)="closeLightbox()">
+  <div class="lightbox-stage" (click)="$event.stopPropagation()">
+    
+    <button class="lightbox-close-btn" (click)="closeLightbox()" aria-label="إغلاق التكبير">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <button 
+      class="lightbox-nav-btn prev-btn" 
+      (click)="prevLightboxImage(); $event.stopPropagation()" 
+      aria-label="الصورة السابقة"
+      *ngIf="currentProjectImages.length > 1"
+    >
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    
+    <div class="lightbox-view">
+      <img [src]="currentLightboxImage()" [alt]="selectedProject()?.title" />
+      <div class="lightbox-info">
+        <span class="lightbox-title">{{ selectedProject()?.title }}</span>
+        <span class="lightbox-counter">{{ activeLightboxIndex() + 1 }} من {{ currentProjectImages.length }}</span>
+      </div>
+    </div>
+    
+    <button 
+      class="lightbox-nav-btn next-btn" 
+      (click)="nextLightboxImage(); $event.stopPropagation()" 
+      aria-label="الصورة التالية"
+      *ngIf="currentProjectImages.length > 1"
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    
+  </div>
+</div>
