@@ -31,21 +31,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   readonly slides: HeroSlide[] = [
     {
-      badge: 'المقاولات العامة والإنشاءات',
-      categoryTag: 'General Contracting',
-      title: 'قوة في التنفيذ ودقة هندسية في بناء المستقبل',
-      subtitle: 'تنفيذ أضخم المشروعات الإنشائية وأعمال البنية التحتية والكباري والمباني الإدارية بأعلى معايير السلامة المهنية والدقة الهندسية العالمية.',
-      primaryBtnText: 'استكشف أعمال المقاولات',
-      primaryBtnLink: '/projects',
-      secondaryBtnText: 'طلب استشارة هندسية',
-      secondaryBtnLink: '/contact',
-      imageUrl: 'assets/images/hero/Construction.jpg'
-    },
-    {
       badge: 'التطوير العقاري والتشطيبات',
       categoryTag: 'Real Estate & Luxury Finishing',
-      title: 'صروح معمارية فاخرة وتشطيبات راقية تُجسد الإتقان',
-      subtitle: 'نبتكر مجتمعات سكنية واستثمارية متكاملة وأرقى حلول التشطيبات الفندقية والديكورات المعمارية التي تمنح وحدتك لمسة جمالية استثنائية.',
+      title: 'صروح معمارية فاخرة من تصميم وتشطيب تجسد الإتقان',
+      subtitle: 'نبتكر مجتمعات سكنية واستثمارية متكاملة وأرقى حلول التصميم الداخلي التشطيبات الفندقية والديكورات المعمارية التي تمنح وحدتك لمسة جمالية استثنائية.',
       primaryBtnText: 'استكشف مشاريعنا وتشطيباتنا',
       primaryBtnLink: '/projects',
       secondaryBtnText: 'طلب مقايسة واستشارة',
@@ -53,10 +42,22 @@ export class HomeComponent implements OnInit, OnDestroy {
       imageUrl: 'assets/images/hero/slide-real-estate.jpg'
     },
     {
+      badge: 'المقاولات العامة والإنشاءات',
+      categoryTag: 'General Contracting',
+      title: ' تنفيذ المشروعات الإنشائية  ',
+      subtitle: 'تنفيذ  المشروعات  بأعلى معايير السلامة المهنية والدقة الهندسية .',
+      primaryBtnText: 'استكشف أعمال المقاولات',
+      primaryBtnLink: '/projects',
+      secondaryBtnText: 'طلب استشارة هندسية',
+      secondaryBtnLink: '/contact',
+      imageUrl: 'assets/images/hero/Construction.jpg'
+    },
+     
+    {
       badge: 'اللاندسكيب وتنسيق الحدائق والتشجير',
       categoryTag: 'Landscaping & Afforestation',
-      title: 'تصميم وتنفيذ وصيانة أرقى الحدائق والمسطحات الخضراء',
-      subtitle: 'إبداع في هندسة اللاندسكيب والتشجير للمجمعات السكنية والإدارية والكمبوندات، مع شبكات ري أوتوماتيكية ذكية وعقود صيانة مستدامة.',
+      title: 'تصميم وتنفيذ الحدائق والمسطحات الخضراء',
+      subtitle: 'إبداع في تصميم وتنفيذ اعمال اللاندسكيب وتشجير الحدائق  والكمبوندات والفنادق، مع شبكات ري أوتوماتيكية ذكية وعقود صيانة مستدامة.',
       primaryBtnText: 'استكشف أعمال اللاندسكيب',
       primaryBtnLink: '/projects',
       secondaryBtnText: 'تواصل مع خبراء اللاندسكيب',
