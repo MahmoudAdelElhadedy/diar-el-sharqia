@@ -12,5 +12,5 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrls: ['./app.scss']
 })
 export class App {
-  title = 'شركة ديار الشرقية للتطوير العقاري والمقاولات العامة واستصلاح الأراضي';
+  title = 'شركة ديار الشرقية للمقاولات العامة والتطوير العقاري والتشطيبات واللاندسكيب';
 }

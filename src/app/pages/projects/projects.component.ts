@@ -20,9 +20,9 @@ export class ProjectsComponent implements OnInit {
 
   readonly categories: { id: ProjectCategory; label: string; icon: string }[] = [
     { id: 'all', label: 'جميع المشاريع', icon: 'fa-solid fa-border-all' },
-    { id: 'real-estate', label: 'تشطيبات فندقية وأبراج سكنية', icon: 'fa-solid fa-hotel' },
-    { id: 'contracting', label: 'مقاولات عامة وبنية تحتية', icon: 'fa-solid fa-helmet-safety' },
-    { id: 'agriculture', label: 'استصلاح أراضي زراعية', icon: 'fa-solid fa-wheat-awn' }
+    { id: 'contracting', label: 'المقاولات العامة', icon: 'fa-solid fa-helmet-safety' },
+    { id: 'real-estate', label: 'التطوير العقاري والتشطيبات', icon: 'fa-solid fa-hotel' },
+    { id: 'landscape', label: 'اللاندسكيب وتنسيق الحدائق والتشجير', icon: 'fa-solid fa-tree' }
   ];
 
   constructor(
@@ -33,9 +33,9 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.updateSeo({
-      title: 'مشاريعنا وأعمالنا الهندسية | شركة ديار الشرقية',
-      description: 'استعرض معرض مشاريع ديار الشرقية: تشطيبات فندقية، أبراج سكنية وإدارية، مقاولات عامة وبنية تحتية، ومشاريع استصلاح الأراضي الزراعية العملاقة في مصر.',
-      keywords: 'مشاريع ديار الشرقية, مشاريع مقاولات مصر, استصلاح الأراضي بالشرقية, تشطيبات فندقية التجمع الخامس, كباري ومحاور الشرقية',
+      title: 'مشاريعنا وأعمالنا | شركة ديار الشرقية للمقاولات والتطوير واللاندسكيب',
+      description: 'استعرض معرض مشاريع شركة ديار الشرقية: المقاولات العامة والإنشاءات، التطوير العقاري والتشطيبات الفاخرة، واللاندسكيب وتنسيق الحدائق والتشجير في مصر.',
+      keywords: 'مشاريع ديار الشرقية, مقاولات عامة مصر, تطوير عقاري, تشطيبات فندقية, لاندسكيب وتنسيق حدائق, تشجير كمبوندات, صيانة حدائق, القاهرة الجديدة, العاصمة الإدارية',
       canonicalPath: '/projects',
       ogImage: '/assets/images/hero/AQAR.jpg',
       ogType: 'website',
@@ -47,7 +47,7 @@ export class ProjectsComponent implements OnInit {
             '@id': 'https://diarelsharqia.com/projects#webpage',
             'url': 'https://diarelsharqia.com/projects',
             'name': 'مشاريع وأعمال شركة ديار الشرقية',
-            'description': 'معرض متكامل يضم أحدث مشاريع التطوير العقاري، المقاولات، واستصلاح الأراضي',
+            'description': 'معرض متكامل يضم أحدث مشاريع المقاولات العامة، التطوير العقاري والتشطيبات، واللاندسكيب وتنسيق الحدائق والتشجير',
             'inLanguage': 'ar-EG'
           },
           this.seoService.getBreadcrumbSchema([
@@ -70,7 +70,9 @@ export class ProjectsComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       const categoryParam = params['category'];
-      if (categoryParam && ['real-estate', 'contracting', 'agriculture'].includes(categoryParam)) {
+      if (categoryParam === 'agriculture') {
+        this.selectedCategory.set('landscape');
+      } else if (categoryParam && ['contracting', 'real-estate', 'landscape'].includes(categoryParam)) {
         this.selectedCategory.set(categoryParam as ProjectCategory);
       }
     });
