@@ -31,10 +31,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   readonly slides: HeroSlide[] = [
     {
-      badge: 'التطوير العقاري والتشطيبات',
+      badge: 'التشطيبات والتطوير العقارى',
       categoryTag: 'Real Estate & Luxury Finishing',
-      title: 'صروح معمارية فاخرة من تصميم وتشطيب تجسد الإتقان',
-      subtitle: 'نبتكر مجتمعات سكنية واستثمارية متكاملة وأرقى حلول التصميم الداخلي التشطيبات الفندقية والديكورات المعمارية التي تمنح وحدتك لمسة جمالية استثنائية.',
+      title: 'جودة البناء، ودقة التشطيب في مكان واحد.',
+      subtitle: 'نبتكر مجتمعات سكنية واستثمارية متكاملة وأرقى حلول التصميم الداخلي والتشطيبات الفندقية والديكورات المعمارية التي تمنح وحدتك لمسة جمالية استثنائية.',
       primaryBtnText: 'استكشف مشاريعنا وتشطيباتنا',
       primaryBtnLink: '/projects',
       secondaryBtnText: 'طلب مقايسة واستشارة',
@@ -42,28 +42,17 @@ export class HomeComponent implements OnInit, OnDestroy {
       imageUrl: 'assets/images/hero/slide-real-estate.jpg'
     },
     {
-      badge: 'المقاولات العامة والإنشاءات',
+      badge: 'الاعمال الانشائية',
       categoryTag: 'General Contracting',
-      title: ' تنفيذ المشروعات الإنشائية  ',
-      subtitle: 'تنفيذ  المشروعات  بأعلى معايير السلامة المهنية والدقة الهندسية .',
+      title: 'شراكة موثوقة تبدأ من الأساسات وتستمر حتى التسليم النهائي.',
+      subtitle: 'نؤمن بأن نجاح أي مشروع إنشائي يبدأ من الثقة والشفافية، لذا نوفر لك متابعة دورية وتقارير هندسية دقيقة في كل خطوة؛ لنضمن تسليم مشروعك مطابقاً لأعلى المواصفات القياسية وفي الموعد المتفق عليه تماماً.',
       primaryBtnText: 'استكشف أعمال المقاولات',
       primaryBtnLink: '/projects',
       secondaryBtnText: 'طلب استشارة هندسية',
       secondaryBtnLink: '/contact',
       imageUrl: 'assets/images/hero/Construction.jpg'
-    },
-     
-    {
-      badge: 'اللاندسكيب وتنسيق الحدائق والتشجير',
-      categoryTag: 'Landscaping & Afforestation',
-      title: 'تصميم وتنفيذ الحدائق والمسطحات الخضراء',
-      subtitle: 'إبداع في تصميم وتنفيذ اعمال اللاندسكيب وتشجير الحدائق  والكمبوندات والفنادق، مع شبكات ري أوتوماتيكية ذكية وعقود صيانة مستدامة.',
-      primaryBtnText: 'استكشف أعمال اللاندسكيب',
-      primaryBtnLink: '/projects',
-      secondaryBtnText: 'تواصل مع خبراء اللاندسكيب',
-      secondaryBtnLink: '/contact',
-      imageUrl: 'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1920&q=85'
     }
+     
   ];
 
   constructor(
@@ -73,9 +62,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.seoService.updateSeo({
-      title: 'شركة ديار الشرقية | للمقاولات العامة والتطوير العقاري والتشطيبات واللاندسكيب',
-      description: 'شركة ديار الشرقية رائدة المقاولات العامة والإنشاءات، التطوير العقاري والتشطيبات الفاخرة، وأعمال اللاندسكيب وتنسيق الحدائق والتشجير في مصر بأعلى معايير الجودة العالمية.',
-      keywords: 'ديار الشرقية, شركة ديار الشرقية, مقاولات عامة مصر, تطوير عقاري, تشطيبات فندقية, لاندسكيب وتنسيق حدائق, تشجير كمبوندات, صيانة مسطحات خضراء, القاهرة الجديدة, العاصمة الإدارية',
+      title: 'شركة ديار الشرقية | للمقاولات العامة والتطوير العقاري والتشطيبات',
+      description: 'شركة ديار الشرقية رائدة المقاولات العامة والإنشاءات، والتطوير العقاري والتشطيبات الفاخرة في مصر بأعلى معايير الجودة العالمية.',
+      keywords: 'ديار الشرقية, شركة ديار الشرقية, مقاولات عامة مصر, تطوير عقاري, تشطيبات فندقية, مقاولات وإنشاءات, أبراج سكنية, القاهرة الجديدة, العاصمة الإدارية',
       canonicalPath: '/',
       ogImage: '/assets/images/hero/Construction.jpg',
       ogType: 'website',
@@ -87,19 +76,19 @@ export class HomeComponent implements OnInit, OnDestroy {
             '@id': 'https://diarelsharqia.com/#website',
             'url': 'https://diarelsharqia.com',
             'name': 'شركة ديار الشرقية',
-            'description': 'الموقع الرسمي لشركة ديار الشرقية للمقاولات العامة والتطوير العقاري والتشطيبات واللاندسكيب',
+            'description': 'الموقع الرسمي لشركة ديار الشرقية للمقاولات العامة والتطوير العقاري والتشطيبات',
             'inLanguage': 'ar-EG',
             'publisher': { '@id': 'https://diarelsharqia.com/#organization' }
           },
           {
             '@type': ['Organization', 'GeneralContractor', 'RealEstateAgent'],
             '@id': 'https://diarelsharqia.com/#organization',
-            'name': 'شركة ديار الشرقية للمقاولات العامة والتطوير العقاري والتشطيبات واللاندسكيب',
+            'name': 'شركة ديار الشرقية للمقاولات العامة والتطوير العقاري والتشطيبات',
             'alternateName': 'Diar El Sharqia',
             'url': 'https://diarelsharqia.com',
             'logo': 'https://diarelsharqia.com/assets/images/hero/section2Home.jpg',
             'image': 'https://diarelsharqia.com/assets/images/hero/Construction.jpg',
-            'description': 'صرح وطني رائد يجمع بين المقاولات العامة والإنشاءات، التطوير العقاري والتشطيبات الفاخرة، واللاندسكيب وتنسيق الحدائق والتشجير في مصر.',
+            'description': 'صرح وطني رائد يجمع بين المقاولات العامة والإنشاءات، والتطوير العقاري والتشطيبات الفاخرة في مصر.',
             'telephone': '+201001234567',
             'email': 'info@diarelsharqia.com',
             'address': {

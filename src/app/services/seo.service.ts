@@ -42,7 +42,7 @@ export class SeoService {
     } else {
       this.metaService.updateTag({
         name: 'keywords',
-        content: 'ديار الشرقية, شركة ديار الشرقية, مقاولات عامة, تطوير عقاري, تشطيبات فندقية, لاندسكيب, تنسيق حدائق, تشجير, بنية تحتية, مصر, القاهرة الجديدة, العاصمة الإدارية'
+        content: 'ديار الشرقية, شركة ديار الشرقية, مقاولات عامة, تطوير عقاري, تشطيبات فندقية, بنية تحتية, مصر, القاهرة الجديدة, العاصمة الإدارية'
       });
     }
 
@@ -77,7 +77,7 @@ export class SeoService {
     this.metaService.updateTag({ property: 'og:type', content: config.ogType || 'website' });
     this.metaService.updateTag({ property: 'og:image', content: ogImage });
     this.metaService.updateTag({ property: 'og:image:alt', content: config.title });
-    this.metaService.updateTag({ property: 'og:site_name', content: 'شركة ديار الشرقية للمقاولات العامة والتطوير العقاري واللاندسكيب' });
+    this.metaService.updateTag({ property: 'og:site_name', content: 'شركة ديار الشرقية للمقاولات العامة والتطوير العقاري والتشطيبات' });
     this.metaService.updateTag({ property: 'og:locale', content: 'ar_EG' });
 
     // 5. Twitter Card Tags

@@ -63,6 +63,33 @@ export class ProjectService {
         'محطات شحن للشاحنات الكهربائية والآليات الثقيلة'
       ]
     },
+    {
+      id: 'governmental-administrative-complex',
+      title: 'مجمع المنشآت والمباني الإدارية المتطورة',
+      category: 'contracting',
+      categoryLabel: 'المقاولات العامة',
+      summary: 'تنفيذ أعمال إنشائية متكاملة لمجمع مباني ومقرات حكومية وإدارية حديثة.',
+      description: 'مشروع مقاولات عامة متكامل يشمل تشييد 6 مبانٍ إدارية بارتفاعات متعددة، وتنفيذ أعمال الأساسات العميقة، والهياكل الخرسانية المسلحة، وشبكات المرافق العامة، والأنظمة الكهروميكانيكية الحديثة (MEP).',
+      location: 'العاصمة الإدارية الجديدة - الحي الحكومي',
+      area: '48,000 م²',
+      year: '2025',
+      client: 'الهيئة الهندسية للمشروعات القومية',
+      status: 'تم التسليم والتشغيل',
+      imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=80'
+      ],
+      features: [
+        'تنفيذ هياكل خرسانية كودية مقاومة للأحمال والزلازل',
+        'أنظمة تكييف مركزي وأنظمة إنذار ومكافحة حريق متقدمة',
+        'شبكات كهروميكانيكية ذكية وتحكم مركزي BMS',
+        'التزام تام بالمعايير والمواصفات القياسية الهندسية'
+      ]
+    },
 
     // 2. Real Estate Development & Finishing Projects (التطوير العقاري والتشطيبات)
     {
@@ -130,7 +157,7 @@ export class ProjectService {
       category: 'real-estate',
       categoryLabel: 'التطوير العقاري والتشطيبات',
       summary: 'مجموعة قصور وفلل سكنية خاصة بتشطيبات كلاسيكية ملكية وتصاميم ديكورية متميزة.',
-      description: 'تجسيد حقيقي للأناقة الملكية والتميز في التطوير العقاري وأعمال التشطيبات الفاخرة؛ يضم المشروع 45 قصراً وفيلا فخمة ذات تشطيبات رخامية إيطالية وواجهات حجرية أنيقة، مع تصميم حدائق ومسابح خاصة لكل وحدة.',
+      description: 'تجسيد حقيقي للأناقة الملكية والتميز في التطوير العقاري وأعمال التشطيبات الفاخرة؛ يضم المشروع 45 قصراً وفيلا فخمة ذات تشطيبات رخامية إيطالية وواجهات حجرية أنيقة، مع تصميم مسابح خاصة ومساحات ترفيهية لكل وحدة.',
       location: 'مدينة الشروق - الحي الدبلوماسي',
       area: '125,000 م²',
       year: '2023',
@@ -149,94 +176,8 @@ export class ProjectService {
       features: [
         'تصميم معماري مستوحى من القصور الأندلسية الراقية',
         'أنظمة منازل ذكية Smart Home متكاملة',
-        'مسابح خاصة وحدائق مزودة بأنظمة ري أوتوماتيكية',
+        'مسابح خاصة وتشطيبات خارجية راقية',
         'ضمان إنشائي متكامل ومعتمد'
-      ]
-    },
-
-    // 3. Landscaping, Afforestation & Grounds Maintenance (اللاندسكيب وتنسيق الحدائق والتشجير)
-    {
-      id: 'landscape-compound-gardens',
-      title: 'تنسيق حدائق ولاندسكيب كمبوند ديار جاردنز',
-      category: 'landscape',
-      categoryLabel: 'اللاندسكيب وتنسيق الحدائق والتشجير',
-      summary: 'تصميم وتنفيذ لاندسكيب متكامل، مسطحات خضراء، ونوافير مائية وشبكات ري ذكية للكمبوندات السكنية.',
-      description: 'تنفيذ شامل لأعمال اللاندسكيب الصلب والناعم (Hardscape & Softscape) على مساحة 65,000 م²، يشمل غرس أشجار الزينة والنخيل، وتصميم ممرات المشاة الحجرية، وشلالات وبحيرات مائية صناعية، مع تركيب شبكات ري أوتوماتيكية مبرمجة موفرة للمياه وصيانة دورية مستدامة.',
-      location: 'القاهرة الجديدة - التجمع الخامس',
-      area: '65,000 م²',
-      year: '2024',
-      client: 'إدارة مجمع ديار جاردنز السكني',
-      status: 'تم التسليم والتشغيل مع الصيانة المستمرة',
-      imageUrl: 'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1200&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80'
-      ],
-      features: [
-        'تصميم وتنفيذ مسطحات خضراء ولاندسكيب ناعم Softscape متكامل',
-        'عناصر مائية راقية تشمل نوافير وبحيرات صناعية متطورة',
-        'أنظمة ري أوتوماتيكية ذكية بمستشعرات رطوبة موفرة للمياه',
-        'برامج صيانة دورية وتشجير مستمر لضمان نضارة المسطحات'
-      ]
-    },
-    {
-      id: 'landscape-business-park',
-      title: 'لاندسكيب وتشجير مجمع الأعمال والمقرات الإدارية',
-      category: 'landscape',
-      categoryLabel: 'اللاندسكيب وتنسيق الحدائق والتشجير',
-      summary: 'تطوير الحدائق والمسطحات الخضراء وممرات المشاة الديكورية بمحيط الأبراج الإدارية ومراكز الأعمال.',
-      description: 'مشروع لاندسكيب متقدم يحيط بالمقرات الإدارية والأبراج الذكية؛ يجمع بين أشجار الظل المعمرة، والمروج العشبية الطبيعية، والإضاءات الديكورية الليلية، وجلسات الاستراحة المفتوحة للموظفين والرواد، مع تطبيق أحدث نظم العزل وشبكات تصريف مياه الري.',
-      location: 'العاصمة الإدارية - حي المال والأعمال',
-      area: '42,000 م²',
-      year: '2024 - 2025',
-      client: 'تحالف مراكز الأعمال والمقرات الإدارية',
-      status: 'تم التسليم مع الصيانة الدورية',
-      imageUrl: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80'
-      ],
-      features: [
-        'تنسيق حدائق عصرية ومسارات مشاة حجرية مضاءة بنظام LED',
-        'أحزمة شجرية بيئية لعزل الضوضاء وتلطيف درجات الحرارة',
-        'أنظمة ري بالتنقيط المحوسبة فائقة التوفير',
-        'إشراف هندسي وفني مستمر لعمليات التقليم والتسميد والرعاية'
-      ]
-    },
-    {
-      id: 'landscape-central-parks',
-      title: 'تشجير وتنسيق الحدائق المركزية والمنتزهات المفتوحة',
-      category: 'landscape',
-      categoryLabel: 'اللاندسكيب وتنسيق الحدائق والتشجير',
-      summary: 'إنشاء حدائق مفتوحة ومسطحات تشجير بيئية متكاملة لخدمة المجمعات السكنية والاستثمارية.',
-      description: 'تصميم وتنفيذ رئة خضراء متكاملة تضم أكثر من 15,000 شجرة ونبتة زينة متناسقة، ومسارات للدراجات والجري وسط المسطحات الخضراء، ومناطق استراحة عائلية مصممة بأحدث معايير العمارة البيئية المستدامة مع صيانة وقائية على مدار العام.',
-      location: 'مدينة الشروق - القطاع السكني المتميز',
-      area: '95,000 م²',
-      year: '2025',
-      client: 'هيئة المجتمعات والتطوير العمراني',
-      status: 'المرحلة التشغيلية والصيانة المتواصلة',
-      imageUrl: 'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1200&q=80',
-      gallery: [
-        'https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80'
-      ],
-      features: [
-        'غرس آلاف الأشجار ونباتات الزينة المتوافقة مع البيئة المحلية',
-        'مسارات وممشى رياضي بطول 3 كم بين المروج الخضراء',
-        'محطات ري ذكية تعتمد على مصادر المياه المعالجة والمستدامة',
-        'فرق عمل متخصصة في مكافحة الآفات والعناية بالتربة والتشجير'
       ]
     }
   ];
@@ -257,7 +198,6 @@ export class ProjectService {
   }
 
   getFeaturedProjects(): Project[] {
-    // 1 from Contracting, 1 from Real Estate & Finishing, 1 from Landscaping
-    return [this.projects[0], this.projects[2], this.projects[5]];
+    return [this.projects[0], this.projects[1], this.projects[3]];
   }
 }

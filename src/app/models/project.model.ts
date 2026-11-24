@@ -1,9 +1,9 @@
-export type ProjectCategory = 'all' | 'contracting' | 'real-estate' | 'landscape';
+export type ProjectCategory = 'all' | 'contracting' | 'real-estate';
 
 export interface Project {
   id: string;
   title: string;
-  category: 'contracting' | 'real-estate' | 'landscape';
+  category: 'contracting' | 'real-estate';
   categoryLabel: string;
   summary: string;
   description: string;
